@@ -1,0 +1,6 @@
+/output/
+*.plg
+*.Rossen
+*.bak
+*.dep
+/Startup.s

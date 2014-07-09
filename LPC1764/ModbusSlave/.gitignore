@@ -1,0 +1,5 @@
+*.bak
+*.dep
+*.uvgui.Rossen
+*.plg
+/output/
