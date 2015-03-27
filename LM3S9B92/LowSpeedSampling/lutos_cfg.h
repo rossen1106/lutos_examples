@@ -8,6 +8,7 @@
 #define LUTOS_F_CPU										50000000UL
 #define LUTOS_PUBLIC_BUFFER_SIZE						2048
 #define LUTOS_MEMORY_ALIGNMENT							4
+#define LUTOS_WATCHDOG_TIMEOUT_MS						500
 
 /* Options for Task Scheduler */
 #define SCHEDULER_MAX_TASK_QUANTITY						20

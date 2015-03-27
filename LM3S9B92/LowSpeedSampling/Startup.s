@@ -78,7 +78,7 @@ __heap_limit
 ; The vector table.
 ;
 ;******************************************************************************
-		EXTERN 	LutosUnitTickUpdate
+		EXTERN 	SysTick_Handler
 		EXTERN  LutosDebugInfoUpdate
         EXPORT  __Vectors
 __Vectors
@@ -97,7 +97,7 @@ __Vectors
         DCD     IntDefaultHandler           ; Debug monitor handler
         DCD     0                           ; Reserved
         DCD     IntDefaultHandler           ; PendSV Handler
-        DCD     LutosUnitTickUpdate         ; SysTick Handler
+        DCD     SysTick_Handler             ; SysTick Handler
         DCD     IntDefaultHandler           ; GPIO Port A
         DCD     IntDefaultHandler           ; GPIO Port B
         DCD     IntDefaultHandler           ; GPIO Port C

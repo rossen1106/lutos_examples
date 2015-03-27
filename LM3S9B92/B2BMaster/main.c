@@ -37,7 +37,7 @@ int main(void)
 	MAP_SysCtlClockSet(SYSCTL_SYSDIV_3 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN |
                        SYSCTL_XTAL_8MHZ);	// for LM3S6965
 
-	B2bBusMasterInit( 0, 115200 );
+	B2bBusMasterInit( 0, 115200, 255, 0 );
 	FsmInit(5,5,5,STM);
 	SampTask = LutosTaskCreate(
 		LowSpeedSampling,
