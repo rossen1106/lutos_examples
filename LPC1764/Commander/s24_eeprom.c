@@ -45,7 +45,7 @@
 void
 s24_eeprom_init(void)
 {
-	i2c_init(I2C_PORT_NUMBER, 100000);
+	i2c_init(I2C_PORT_NUMBER, 400000);
 	gpio_config(WP_PORT, WP_PIN, GPIO_OUT);
 	WP_ENABLE();
 	eeprom_is_ready();	// sample the WP=1 pin state

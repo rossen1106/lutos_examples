@@ -8,6 +8,7 @@
 #define LUTOS_F_CPU										100000000UL
 #define LUTOS_PUBLIC_BUFFER_SIZE						2048
 #define LUTOS_MEMORY_ALIGNMENT							4
+#define LUTOS_VIEW_ENABLE								1
 
 /* Options for Task Scheduler */
 #define SCHEDULER_MAX_TASK_QUANTITY						20
@@ -18,7 +19,4 @@
 
 /* Options for Debug Information */
 #define DEBUGINFO_ENABLE								1
-#define DEBUGINFO_BAUDRATE								115200UL
 #define DEBUGINFO_OUTPUT_MESSAGE_LEVEL					0
-#define	DEBUGINFO_BUFFER_LENGTH							1024
-#define DEBUGINFO_TIME_TAG_DIGITS						10

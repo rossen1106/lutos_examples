@@ -1,0 +1,6 @@
+/output/
+*.plg
+*.bak
+*.dep
+*.Rossen
+/main_memtest.c

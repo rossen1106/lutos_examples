@@ -18,10 +18,7 @@
 
 /* Options for Debug Information */
 #define DEBUGINFO_ENABLE								1
-#define DEBUGINFO_BAUDRATE								115200UL
 #define DEBUGINFO_OUTPUT_MESSAGE_LEVEL					0
-#define	DEBUGINFO_BUFFER_LENGTH							1024
-#define DEBUGINFO_TIME_TAG_DIGITS						10
 
 /* Options for B2B Communication */
 #define B2B_PACKET_TIMEOUT								5

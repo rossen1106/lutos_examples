@@ -71,8 +71,7 @@ int main(void)
 		CommanderGlueWrite,
 		1024,	// memory size (memory size / 8 = available variables)
 		8,		// page size
-		20, 	// page write delay (ms)
-		10		// max blocks
+		20		// page write delay (ms)
 	);
 	
 	hSscCmdTask = SscCommandTaskInit(
@@ -97,7 +96,7 @@ int main(void)
 	VAR_U( BlockID, 2, ParamD32 );
 	VAR_F( BlockID, 3, ParamD64 );
 	
-	SscRegisterVariable(BlockID2, 0, (sizeof(a)<<4), &a, SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
+	/*SscRegisterVariable(BlockID2, 0, (sizeof(a)<<4), &a, SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
 	SscRegisterVariable(BlockID2, 1, (sizeof(b)<<4)+1, &b, SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
 	SscRegisterVariable(BlockID2, 2, (sizeof(c)<<4), &c, SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
 	SscRegisterVariable(BlockID2, 3, (sizeof(d)<<4)+1, &d, SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
@@ -106,11 +105,20 @@ int main(void)
 	SscRegisterVariable(BlockID2, 6, (sizeof(g)<<4), &g, SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
 	SscRegisterVariable(BlockID2, 7, (sizeof(h)<<4)+1, &h, SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
 	SscRegisterVariable(BlockID2, 8, (sizeof(i)<<4)+2, &i, SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
-	SscRegisterVariable(BlockID2, 9, (sizeof(j)<<4)+2, &j, SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
+	SscRegisterVariable(BlockID2, 9, (sizeof(j)<<4)+2, &j, SSC_VAR_PROPERTY_SAVE_ON_DEMAND);*/
 	//SscRegisterVariable( BlockID2, 9, SSC_VAR_TYPE_64_DOUBLE, &j, SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
-		
+	VAR( BlockID2, 0, a );
+	VAR_U( BlockID2, 1, b );
+	VAR( BlockID2, 2, c );
+	VAR_U( BlockID2, 3, d );
+	VAR( BlockID2, 4, e );
+	VAR_U( BlockID2, 5, f );
+	VAR( BlockID2, 6, g );
+	VAR_U( BlockID2, 7, h );
+	VAR_F( BlockID2, 8, i );
+	VAR_F( BlockID2, 9, j );
 	
-	SscRegisterVariable(BlockID3, 0, (sizeof(test[0][0])<<4)+2, &test[0][0], SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
+	/*SscRegisterVariable(BlockID3, 0, (sizeof(test[0][0])<<4)+2, &test[0][0], SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
 	SscRegisterVariable(BlockID3, 1, (sizeof(test[0][1])<<4)+2, &test[0][1], SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
 	SscRegisterVariable(BlockID3, 2, (sizeof(test[0][2])<<4)+2, &test[0][2], SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
 	SscRegisterVariable(BlockID3, 3, (sizeof(test[1][0])<<4)+2, &test[1][0], SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
@@ -128,30 +136,25 @@ int main(void)
 	SscRegisterVariable(BlockID3, 14, (sizeof(test2[1][2])<<4), &test2[1][2], SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
 	SscRegisterVariable(BlockID3, 15, (sizeof(test2[2][0])<<4), &test2[2][0], SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
 	SscRegisterVariable(BlockID3, 16, (sizeof(test2[2][1])<<4), &test2[2][1], SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
-	SscRegisterVariable(BlockID3, 17, (sizeof(test2[2][2])<<4), &test2[2][2], SSC_VAR_PROPERTY_SAVE_ON_DEMAND);
-	/*VAR( BlockID3, 0, test[0][0] );
-	VAR( BlockID3, 1, test[0][1] );
-	VAR( BlockID3, 2, test[0][2] );
-	
-	VAR( BlockID3, 3, test[1][0] );
-	VAR( BlockID3, 4, test[1][1] );
-	VAR( BlockID3, 5, test[1][2] );
-	
-	VAR( BlockID3, 6, test[2][0] );
-	VAR( BlockID3, 7, test[2][1] );
-	VAR( BlockID3, 8, test[2][2] );
-	
+	SscRegisterVariable(BlockID3, 17, (sizeof(test2[2][2])<<4), &test2[2][2], SSC_VAR_PROPERTY_SAVE_ON_DEMAND);*/
+	VAR_F( BlockID3, 0, test[0][0] );
+	VAR_F( BlockID3, 1, test[0][1] );
+	VAR_F( BlockID3, 2, test[0][2] );
+	VAR_F( BlockID3, 3, test[1][0] );
+	VAR_F( BlockID3, 4, test[1][1] );
+	VAR_F( BlockID3, 5, test[1][2] );
+	VAR_F( BlockID3, 6, test[2][0] );
+	VAR_F( BlockID3, 7, test[2][1] );
+	VAR_F( BlockID3, 8, test[2][2] );
 	VAR( BlockID3, 9, test2[0][0] );
 	VAR( BlockID3, 10, test2[0][1] );
 	VAR( BlockID3, 11, test2[0][2] );
-	
 	VAR( BlockID3, 12, test2[1][0] );
 	VAR( BlockID3, 13, test2[1][1] );
 	VAR( BlockID3, 14, test2[1][2] );
-	
 	VAR( BlockID3, 15, test2[2][0] );
 	VAR( BlockID3, 16, test2[2][1] );
-	VAR( BlockID3, 17, test2[2][2] );*/
+	VAR( BlockID3, 17, test2[2][2] );
 	
 	for(x=0; x<40; x++)
 		VAR( BlockID4, x, test3[x] );

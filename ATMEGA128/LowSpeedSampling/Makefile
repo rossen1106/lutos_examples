@@ -83,12 +83,12 @@ SRCDIR = ../../../lutos
 # List C source files here. (C dependencies are automatically generated.)
 SRC = $(TARGET).c \
 	$(SRCDIR)/port/gcc/ATMEGA128/port.c \
+	$(SRCDIR)/port/gcc/ATMEGA128/debug_uart.c \
 	$(SRCDIR)/main/task.c \
 	$(SRCDIR)/main/tick.c \
 	$(SRCDIR)/main/queue.c \
 	$(SRCDIR)/main/flag.c \
 	$(SRCDIR)/main/ring.c \
-	$(SRCDIR)/main/debug.c \
 	$(SRCDIR)/main/heap.c
 
 

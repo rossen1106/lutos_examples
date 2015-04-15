@@ -424,11 +424,6 @@
               <FilePath>..\..\..\lutos\main\b2b_m.c</FilePath>
             </File>
             <File>
-              <FileName>debug.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\lutos\main\debug.c</FilePath>
-            </File>
-            <File>
               <FileName>flag.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\lutos\main\flag.c</FilePath>
@@ -463,6 +458,11 @@
         <Group>
           <GroupName>Port</GroupName>
           <Files>
+            <File>
+              <FileName>debug_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\lutos\port\rvmdk\LPC17xx\debug_uart.c</FilePath>
+            </File>
             <File>
               <FileName>port.c</FileName>
               <FileType>1</FileType>

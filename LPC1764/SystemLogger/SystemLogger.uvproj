@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>Commander</TargetName>
+      <TargetName>SystemLogger</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
@@ -44,7 +44,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\output\</OutputDirectory>
-          <OutputName>Commander</OutputName>
+          <OutputName>SystemLogger</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -117,7 +117,7 @@
             <Oh166RecLen>16</Oh166RecLen>
           </OPTHX>
           <Simulator>
-            <UseSimulator>0</UseSimulator>
+            <UseSimulator>1</UseSimulator>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
             <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
@@ -128,7 +128,7 @@
             <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
           </Simulator>
           <Target>
-            <UseTarget>1</UseTarget>
+            <UseTarget>0</UseTarget>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
             <RunToMain>0</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
@@ -138,7 +138,7 @@
             <RestoreToolbox>1</RestoreToolbox>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>1</TargetSelection>
+          <TargetSelection>0</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -161,11 +161,11 @@
             <UseExternalTool>0</UseExternalTool>
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
-            <Capability>0</Capability>
-            <DriverSelection>-1</DriverSelection>
+            <Capability>1</Capability>
+            <DriverSelection>4096</DriverSelection>
           </Flash1>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
         </Utilities>
         <TargetArmAds>
@@ -334,7 +334,7 @@
           <Cads>
             <interw>1</interw>
             <Optim>1</Optim>
-            <oTime>0</oTime>
+            <oTime>1</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>0</OneElfS>
             <Strict>0</Strict>
@@ -346,9 +346,9 @@
             <uThumb>0</uThumb>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>RVMDK_ARM_CM3_LPC17xx LPC17XX</Define>
+              <Define>RVMDK_ARM_CM3_LPC17xx</Define>
               <Undefine></Undefine>
-              <IncludePath>.;..\..\..\lutos\include;..\..\..\lutos\port\rvmdk\LPC17xx</IncludePath>
+              <IncludePath>..\..\..\lutos\include;.</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -367,7 +367,7 @@
             </VariousControls>
           </Aads>
           <LDads>
-            <umfTarg>0</umfTarg>
+            <umfTarg>1</umfTarg>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
             <noStLib>0</noStLib>
@@ -375,7 +375,7 @@
             <useFile>0</useFile>
             <TextAddressRange>0x00000000</TextAddressRange>
             <DataAddressRange>0x10000000</DataAddressRange>
-            <ScatterFile></ScatterFile>
+            <ScatterFile>.\output\LowSpeedSampling.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
             <Misc></Misc>
@@ -386,43 +386,23 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Startup</GroupName>
-          <Files>
-            <File>
-              <FileName>startup_LPC17xx.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\startup_LPC17xx.s</FilePath>
-            </File>
-            <File>
-              <FileName>system_LPC17xx.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\system_LPC17xx.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Application</GroupName>
           <Files>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main.c</FilePath>
+            </File>
             <File>
               <FileName>lutos_cfg.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\lutos_cfg.h</FilePath>
-            </File>
-            <File>
-              <FileName>main_b2b_pm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main_b2b_pm.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Lutos</GroupName>
           <Files>
-            <File>
-              <FileName>b2b_s.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\lutos\main\b2b_s.c</FilePath>
-            </File>
             <File>
               <FileName>flag.c</FileName>
               <FileType>1</FileType>
@@ -453,15 +433,25 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\lutos\main\tick.c</FilePath>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Startup</GroupName>
+          <Files>
             <File>
-              <FileName>commander.c</FileName>
+              <FileName>startup_LPC17xx.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\startup_LPC17xx.s</FilePath>
+            </File>
+            <File>
+              <FileName>system_LPC17xx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\lutos\main\commander.c</FilePath>
+              <FilePath>.\system_LPC17xx.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Port</GroupName>
+          <GroupName>Lutos-port</GroupName>
           <Files>
             <File>
               <FileName>port.c</FileName>
@@ -469,29 +459,9 @@
               <FilePath>..\..\..\lutos\port\rvmdk\LPC17xx\port.c</FilePath>
             </File>
             <File>
-              <FileName>setbaud.c</FileName>
+              <FileName>debug_uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\lutos\port\rvmdk\LPC17xx\setbaud.c</FilePath>
-            </File>
-            <File>
-              <FileName>multidrop_uart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\lutos\port\rvmdk\LPC17xx\multidrop_uart.c</FilePath>
-            </File>
-            <File>
-              <FileName>gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\lutos\port\rvmdk\LPC17xx\gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>crc16.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\lutos\port\rvmdk\LPC17xx\crc16.c</FilePath>
-            </File>
-            <File>
-              <FileName>flash_nvol.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\flash_nvol.c</FilePath>
+              <FilePath>..\..\..\lutos\port\rvmdk\LPC17xx\debug_uart.c</FilePath>
             </File>
           </Files>
         </Group>

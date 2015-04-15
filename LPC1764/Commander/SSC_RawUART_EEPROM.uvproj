@@ -333,8 +333,8 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
-            <oTime>0</oTime>
+            <Optim>4</Optim>
+            <oTime>1</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>0</OneElfS>
             <Strict>0</Strict>
@@ -424,11 +424,6 @@
               <FilePath>..\..\..\lutos\main\b2b_s.c</FilePath>
             </File>
             <File>
-              <FileName>debug.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\lutos\main\debug.c</FilePath>
-            </File>
-            <File>
               <FileName>flag.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\lutos\main\flag.c</FilePath>
@@ -502,6 +497,11 @@
               <FileName>crc16.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\lutos\port\rvmdk\LPC17xx\crc16.c</FilePath>
+            </File>
+            <File>
+              <FileName>debug_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\lutos\port\rvmdk\LPC17xx\debug_uart.c</FilePath>
             </File>
           </Files>
         </Group>

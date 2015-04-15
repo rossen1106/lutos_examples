@@ -2,6 +2,7 @@
 #include "lutos.h"
 #include "task.h"
 #include "tick.h"
+#include "debug.h"
 
 TASK *SampTask;
 
@@ -13,6 +14,9 @@ int16s ADConvert(void)
 
 void SingleSampleSend(int16s data)
 {
+	#if DEBUGINFO_ENABLE==1
+	LutosDebugOutput(DEBUG_MESSAGE_USER, "Sample is sending...", 0);
+	#endif
 }
 
 void LowSpeedSampling(void *p)
