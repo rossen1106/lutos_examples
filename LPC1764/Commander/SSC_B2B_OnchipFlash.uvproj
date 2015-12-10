@@ -458,6 +458,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\lutos\main\commander.c</FilePath>
             </File>
+            <File>
+              <FileName>b2b_s_mdb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\lutos\main\b2b_s_mdb.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -492,6 +497,11 @@
               <FileName>flash_nvol.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\flash_nvol.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\lutos\port\rvmdk\LPC17xx\uart.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -60,7 +60,7 @@ void SlaveSystemTimeSync(void *p)
 int main(void)
 {
 	SystemCoreClockUpdate();
-	B2bBusSlaveInit( 3, 115200, 1, 10, 255, 0 );
+	B2bBusSlaveInit( 3, 115200, 1, 255, 0 );
 	
 	// Tick Time Synchronization
 	B2bBusRegister( B2B_TYPE_WRITE, 100, (uint8_t *)TimeSyncBuffer, 8,

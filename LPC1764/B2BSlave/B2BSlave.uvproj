@@ -453,6 +453,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\lutos\main\tick.c</FilePath>
             </File>
+            <File>
+              <FileName>b2b_s_mdb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\lutos\main\b2b_s_mdb.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -482,6 +487,11 @@
               <FileName>gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\lutos\port\rvmdk\LPC17xx\gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\lutos\port\rvmdk\LPC17xx\uart.c</FilePath>
             </File>
           </Files>
         </Group>

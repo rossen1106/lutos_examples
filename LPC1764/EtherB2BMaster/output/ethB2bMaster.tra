@@ -1,0 +1,61 @@
+*** Creating Trace Output File '.\output\ethB2bMaster.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\output\startup_lpc17xx.o"'
+### List of Objects: adding '".\output\system_lpc17xx.o"'
+### List of Objects: adding '".\output\heap.o"'
+### List of Objects: adding '".\output\queue.o"'
+### List of Objects: adding '".\output\task.o"'
+### List of Objects: adding '".\output\tick.o"'
+### List of Objects: adding '".\output\b2b_m.o"'
+### List of Objects: adding '".\output\b2b_m_udp.o"'
+### List of Objects: adding '".\output\port.o"'
+### List of Objects: adding '".\output\gpio.o"'
+### List of Objects: adding '".\output\emac_netif.o"'
+### List of Objects: adding '".\output\emac_phy_dp83848.o"'
+### List of Objects: adding '".\output\lpc17xx_systick_arch.o"'
+### List of Objects: adding '".\output\lpc_debug.o"'
+### List of Objects: adding '".\output\i2c_m.o"'
+### List of Objects: adding '".\output\s24_eeprom.o"'
+### List of Objects: adding '".\output\ethernet.o"'
+### List of Objects: adding '".\output\main_group.o"'
+### List of Objects: adding '".\output\def.o"'
+### List of Objects: adding '".\output\dhcp.o"'
+### List of Objects: adding '".\output\dns.o"'
+### List of Objects: adding '".\output\init.o"'
+### List of Objects: adding '".\output\mem.o"'
+### List of Objects: adding '".\output\memp.o"'
+### List of Objects: adding '".\output\netif.o"'
+### List of Objects: adding '".\output\pbuf.o"'
+### List of Objects: adding '".\output\raw.o"'
+### List of Objects: adding '".\output\stats.o"'
+### List of Objects: adding '".\output\sys.o"'
+### List of Objects: adding '".\output\tcp.o"'
+### List of Objects: adding '".\output\tcp_in.o"'
+### List of Objects: adding '".\output\tcp_out.o"'
+### List of Objects: adding '".\output\timers.o"'
+### List of Objects: adding '".\output\udp.o"'
+### List of Objects: adding '".\output\autoip.o"'
+### List of Objects: adding '".\output\icmp.o"'
+### List of Objects: adding '".\output\igmp.o"'
+### List of Objects: adding '".\output\inet.o"'
+### List of Objects: adding '".\output\inet_chksum.o"'
+### List of Objects: adding '".\output\ip.o"'
+### List of Objects: adding '".\output\ip_addr.o"'
+### List of Objects: adding '".\output\ip_frag.o"'
+### List of Objects: adding '".\output\etharp.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 ".\output\startup_lpc17xx.o" ".\output\system_lpc17xx.o" ".\output\heap.o" ".\output\queue.o" ".\output\task.o" ".\output\tick.o" ".\output\b2b_m.o" ".\output\b2b_m_udp.o" ".\output\port.o" ".\output\gpio.o" ".\output\emac_netif.o" ".\output\emac_phy_dp83848.o" ".\output\lpc17xx_systick_arch.o" ".\output\lpc_debug.o" ".\output\i2c_m.o" ".\output\s24_eeprom.o" ".\output\ethernet.o" ".\output\main_group.o" ".\output\def.o" ".\output\dhcp.o" ".\output\dns.o" ".\output\init.o" ".\output\mem.o" ".\output\memp.o" ".\output\netif.o" ".\output\pbuf.o" ".\output\raw.o" ".\output\stats.o" ".\output\sys.o" ".\output\tcp.o" ".\output\tcp_in.o" ".\output\tcp_out.o" ".\output\timers.o" ".\output\udp.o" ".\output\autoip.o" ".\output\icmp.o" ".\output\igmp.o" ".\output\inet.o" ".\output\inet_chksum.o" ".\output\ip.o" ".\output\ip_addr.o" ".\output\ip_frag.o" ".\output\etharp.o" --strict --scatter ".\output\ethB2bMaster.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\output\ethB2bMaster.map" -o ".\output\ethB2bMaster.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\output\ethB2bMaster.axf'
+### ADS-LD Command File: '.\output\ethB2bMaster.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\output\ethB2bMaster.lnp', Handle=0x0000068C
+### Writing '.lnp' file
+### ADS-LD Command file '.\output\ethB2bMaster.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

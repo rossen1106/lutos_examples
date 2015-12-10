@@ -76,20 +76,20 @@ TARGET = main
 # Object files directory
 #     To put object files in current directory, use a dot (.), do NOT make
 #     this an empty or blank macro!
-OBJDIR = .
+OBJDIR = ./
 
 SRCDIR = ../../../lutos
 
 # List C source files here. (C dependencies are automatically generated.)
 SRC = $(TARGET).c \
-	$(SRCDIR)/port/gcc/ATMEGA128/port.c \
-	$(SRCDIR)/port/gcc/ATMEGA128/debug_uart.c \
 	$(SRCDIR)/main/task.c \
 	$(SRCDIR)/main/tick.c \
 	$(SRCDIR)/main/queue.c \
 	$(SRCDIR)/main/flag.c \
 	$(SRCDIR)/main/ring.c \
-	$(SRCDIR)/main/heap.c
+	$(SRCDIR)/main/heap.c \
+	$(SRCDIR)/port/gcc/ATMEGA128/port.c \
+	$(SRCDIR)/port/gcc/ATMEGA128/debug_uart.c
 
 
 # List C++ source files here. (C dependencies are automatically generated.)
@@ -557,6 +557,12 @@ extcoff: $(TARGET).elf
 
 # Compile: create object files from C source files.
 $(OBJDIR)/%.o : %.c
+	@echo
+	@echo $(MSG_COMPILING) $<
+	$(CC) -c $(ALL_CFLAGS) $< -o $@ 
+
+# Compile: create object files from C source files.
+$(SRCDIR)/main/%.o : %.c
 	@echo
 	@echo $(MSG_COMPILING) $<
 	$(CC) -c $(ALL_CFLAGS) $< -o $@ 

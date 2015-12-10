@@ -50,7 +50,7 @@ void SlaveSystemTimeSync(void *p)
 int main(void)
 {
 	SystemCoreClockUpdate();
-	B2bBusSlaveInit( 3, 115200, 1, 10, 255, 0 );
+	B2bBusSlaveInit( 3, 115200, 1, 255, 0 );
 	
 	// Tick Time Synchronization
 	B2bBusRegister( B2B_TYPE_WRITE, 100, (uint8_t *)TimeSyncBuffer, 8,
@@ -65,7 +65,7 @@ int main(void)
 	SscInit(
 		eeprom_read_block,
 		eeprom_write_block,
-		1024,	// memory size (memory size / 8 = available variables)
+		4096,	// memory size (memory size / 8 = available variables)
 		32,		// page size
 		10		// page write delay (ms)
 	);

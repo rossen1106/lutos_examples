@@ -483,6 +483,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\lutos\port\rvmdk\LPC17xx\gpio.c</FilePath>
             </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\lutos\port\rvmdk\LPC17xx\uart.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

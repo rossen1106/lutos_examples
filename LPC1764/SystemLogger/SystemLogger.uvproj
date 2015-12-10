@@ -433,6 +433,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\lutos\main\tick.c</FilePath>
             </File>
+            <File>
+              <FileName>fsm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\lutos\main\fsm.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

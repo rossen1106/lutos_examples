@@ -33,10 +33,15 @@
 #include "tick.h"
 #include "debug.h"
 #include "ring.h"
+#include "queue.h"
 
 TASK *hJobA, *hJobB, *hJobC, *hJobD, *hJobE, *hJobF, *hJobG, *hJobH;
 task_log_t LogResult[8];
 char logbuf[128];
+
+QUEUE *hTestQueue;
+int32u QueueDepth, TestData[6];
+int32u QueueCycle=0, QueueError=0;
 
 void DumpMyLog(void *p)
 {
@@ -65,13 +70,41 @@ void DummyWork(int32u Length)
 
 void JobA_StepFunction(void *p)
 {
-	DummyWork(100);
+	LutosQueuePush(hTestQueue, TestData);
+	//DummyWork(100);
 	LutosTaskTrigger(hJobB);
 }
 
 void JobB_StepFunction(void *p)
 {
-	DummyWork(200);
+	if( hTestQueue->Count > 1 )
+	{
+		LutosQueuePop(hTestQueue, TestData);
+		QueueCycle++;
+		
+		if( hTestQueue->Head >= hTestQueue->Tail )
+		{
+			QueueDepth = (int32u)hTestQueue->Head - (int32u)hTestQueue->Tail;
+			QueueDepth /= hTestQueue->ItemSize;
+			
+			if( QueueDepth != hTestQueue->Count )
+			{
+				QueueError++;
+			}
+		}
+		else
+		{
+			QueueDepth = (int32u)hTestQueue->Head - (int32u)hTestQueue->Base;
+			QueueDepth += (int32u)hTestQueue->Top - (int32u)hTestQueue->Tail;
+			QueueDepth /= hTestQueue->ItemSize;
+			
+			if( QueueDepth != hTestQueue->Count )
+			{
+				QueueError++;
+			}
+		}
+	}
+	//DummyWork(200);
 	LutosTaskTrigger(hJobC);
 }
 
@@ -113,6 +146,7 @@ int main(void)
 {
 	SystemCoreClockUpdate();
 	
+	hTestQueue = LutosQueueCreate( sizeof(TestData), 10 );
 	hJobA = LutosTaskCreate(JobA_StepFunction, "JOB A", NULL, PRIORITY_NON_REALTIME);
 	hJobB = LutosTaskCreate(JobB_StepFunction, "JOB B", NULL, PRIORITY_NON_REALTIME);
 	hJobC = LutosTaskCreate(JobC_StepFunction, "JOB C", NULL, PRIORITY_NON_REALTIME);
