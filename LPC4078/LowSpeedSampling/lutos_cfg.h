@@ -5,11 +5,10 @@
  ****************************************************************/
 
 /* General Options */
-#define LUTOS_F_CPU										F_CPU
+#define LUTOS_F_CPU										100000000UL
 #define LUTOS_PUBLIC_BUFFER_SIZE						2048
-#define LUTOS_MEMORY_ALIGNMENT							1
-#define LUTOS_VIEW_ENABLE								0
-#define LUTOS_WATCHDOG_TIMEOUT_MS						0
+#define LUTOS_MEMORY_ALIGNMENT							4
+#define LUTOS_VIEW_ENABLE								1
 
 /* Options for Task Scheduler */
 #define SCHEDULER_MAX_TASK_QUANTITY						20
